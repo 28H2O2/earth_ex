@@ -72,7 +72,6 @@ export function WorldMapApp() {
   const [targetScale, setTargetScale] = useState(1);
   const [isLoaded, setIsLoaded] = useState(false);
   const [isExporting, setIsExporting] = useState<"" | "poster" | "map">("");
-  const [shareMessage, setShareMessage] = useState("");
   const [hoveredRegion, setHoveredRegion] = useState<HoveredRegion | null>(null);
 
   const viewportRef = useRef<HTMLDivElement>(null);
@@ -315,12 +314,6 @@ export function WorldMapApp() {
     } finally {
       setIsExporting("");
     }
-  }
-
-  async function handleCopyLink() {
-    await navigator.clipboard.writeText(window.location.href);
-    setShareMessage("分享链接已复制");
-    window.setTimeout(() => setShareMessage(""), 1600);
   }
 
   const handleSelectRegion = useCallback((region: RegionMeta) => {
@@ -636,10 +629,10 @@ export function WorldMapApp() {
               <div className="mt-4 grid gap-2">
                 <button
                   type="button"
-                  onClick={handleCopyLink}
-                  className="rounded-2xl bg-slate-950 px-4 py-3 text-sm font-medium text-white transition hover:bg-slate-800"
+                  disabled
+                  className="cursor-not-allowed rounded-2xl bg-slate-300 px-4 py-3 text-sm font-medium text-slate-500"
                 >
-                  复制分享链接
+                  复制分享链接（暂不可用）
                 </button>
                 <button
                   type="button"
@@ -668,9 +661,6 @@ export function WorldMapApp() {
                   清空全部状态
                 </button>
               </div>
-              {shareMessage ? (
-                <p className="mt-3 text-sm font-medium text-emerald-700">{shareMessage}</p>
-              ) : null}
             </section>
           </aside>
         </section>
