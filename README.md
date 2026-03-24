@@ -76,5 +76,4 @@ npm run start
 ## Reference
 
 - Inspiration source: [`ukyouz/JapanEx`](https://github.com/ukyouz/JapanEx)
-- 本仓库中的参考代码位于 `.reference/JapanEx/`
 - 参考目录仅用于灵感和交互思路对照，不参与当前应用构建或 lint
