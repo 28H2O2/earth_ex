@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+:root {
+  --background: #edf4ff;
+  --foreground: #102542;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  --font-mono: "SFMono-Regular", "Menlo", "Monaco", "Consolas", monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background:
+    radial-gradient(circle at top left, rgba(255, 255, 255, 0.9), transparent 34%),
+    linear-gradient(180deg, #eef4ff, #dae6ff 52%, #edf3ff);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.worldex-export-sandbox {
+  position: fixed;
+  left: -200vw;
+  top: 0;
+  pointer-events: none;
+  opacity: 0;
+}
