@@ -2,6 +2,15 @@
 
 用 6 种颜色记录你对世界各国家/地区的旅行状态。
 
+## Inspiration
+
+本项目的交互灵感来自 [`ukyouz/JapanEx`](https://github.com/ukyouz/JapanEx)。
+
+- 原项目：JapanEx / 日本制县
+- 本仓库中的参考副本位于 `.reference/JapanEx/`
+- 本项目并非该项目的官方分支，而是基于其“点击地图记录旅行等级”的核心想法，面向世界地图场景重新实现
+- 当前实现针对世界地图做了独立的数据结构、状态序列化、导出图片和 UI 设计调整
+
 ## Features
 
 - 国家/地区级世界地图，支持点击设置 6 个等级
@@ -66,4 +75,6 @@ npm run start
 
 ## Reference
 
-参考项目位于本仓库的 `.reference/JapanEx/`，仅作为交互思路参考，不参与当前应用构建或 lint。
+- Inspiration source: [`ukyouz/JapanEx`](https://github.com/ukyouz/JapanEx)
+- 本仓库中的参考代码位于 `.reference/JapanEx/`
+- 参考目录仅用于灵感和交互思路对照，不参与当前应用构建或 lint

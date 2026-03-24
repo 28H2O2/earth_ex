@@ -243,7 +243,20 @@ export function WorldMapApp() {
     }
 
     const target = event.target as HTMLElement;
-    if (target.closest("[data-region-id]")) {
+    if (
+      target.closest(
+        [
+          "[data-region-id]",
+          "button",
+          "input",
+          "textarea",
+          "select",
+          "label",
+          "a",
+          "[role='button']",
+        ].join(","),
+      )
+    ) {
       return;
     }
 
@@ -311,6 +324,11 @@ export function WorldMapApp() {
   }
 
   const handleSelectRegion = useCallback((region: RegionMeta) => {
+    setSelectedId(region.id);
+    setSearchTerm("");
+  }, []);
+
+  const handleSearchSelectRegion = useCallback((region: RegionMeta) => {
     setSelectedId(region.id);
     focusRegion(region.id);
     setSearchTerm("");
@@ -500,7 +518,7 @@ export function WorldMapApp() {
                       <button
                         key={item.id}
                         type="button"
-                        onClick={() => handleSelectRegion(item)}
+                        onClick={() => handleSearchSelectRegion(item)}
                         className="flex w-full items-center justify-between rounded-2xl px-3 py-3 text-left transition hover:bg-slate-50"
                       >
                         <span>
